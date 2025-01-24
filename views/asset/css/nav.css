@@ -28,3 +28,42 @@ li {
     max-height: 100%;
     margin-top: 5%;
 }
+
+
+.langSelect{
+    background-color: white;
+    height: 60px;
+    width: 120px;
+    border-radius: 10px;
+}
+
+.optLange {
+    background-color: white;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+
+.langOpt{
+    display: flex;
+    height: 60px;
+    justify-content: space-around;
+}
+
+.langImg{
+    display: flex;
+    align-items: center;
+}
+
+.langImg img{
+    height: 30px;
+    width: 30px;
+}
+
+.langTxt{
+    display: flex;
+    align-items: center;
+}

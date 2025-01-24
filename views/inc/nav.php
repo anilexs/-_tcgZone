@@ -20,10 +20,44 @@ if(isset($_COOKIE[''])){ ?>
                 </a>
             </li>
             <li>
-                <a href="">connexion</a>
+                <input type="text">
             </li>
             <li>
-                <a href="">inscription</a>
+                <button>connexion</button>
+            </li>
+            <li>
+                <button>inscription</=>
+            </li>
+            <li>
+                <div class='langSelect'>
+                    <?php 
+                    $first = true;
+                    foreach ($country as $key => $country) { 
+                        
+                        if($key == $lang){ ?>
+                            <div class="langOpt">
+                                <div class="langImg">
+                                    <img src="<?= $country['flag'] ?>" alt="">
+                                </div>
+                                <div class="langTxt">Français</div> 
+                            </div>
+                        <?php } 
+                       
+                        if($first == true){ ?>
+                            <div class="optLange close">
+                            <?php $first = false ?>
+                        <?php } ?>
+
+
+                           <div class="langOpt">
+                               <div class="langImg">
+                                   <img src="<?= $country['flag'] ?>" alt="">
+                               </div>
+                               <div class="langTxt">Français</div> 
+                           </div>
+                           <?php } ?>
+                    </div>
+                </div>
             </li>
         </ul>
     </nav>

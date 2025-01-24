@@ -1,33 +1,27 @@
-var currentUrl = window.location.href;
-console.log(currentUrl);
 $(document).ready(function(){
-    $('#authentication').on('click', function(e) {
-        var cla = $(this).attr('class');
-        authentication(cla);
-    });
-});
 
-function authentication(cla){
-    console.log((cla !== null ? cla : null));
+    $('.langSelect').on('click', function(e) {
+        var selecteur = $('.optLange');
+    
+        // Vérifie si l'élément a la classe 'close'
+        var close = $(selecteur).hasClass('close');
+    
+        if (close) {
+            
+            var contentHeight = $(selecteur)[0].scrollHeight;
+            $(selecteur).stop(true, true).animate({
+                maxHeight: contentHeight
+            }, 100);
 
-    var divAuthentication = $('<div class="divAuthenticationBack"></div>');
-        divAuthentication.append('<div class="divAuthentication"></div>');
-        
-    $('body').prepend(divAuthentication);
-
-    $('.divAuthenticationBack').on('click', function(e) {
-        e.stopPropagation();
-        $(divAuthentication).remove();
-    });
-    $('.divAuthentication').on('click', function(e) {
-        e.stopPropagation();
-    });
-    $(document).keyup(function(e) {
-        if (e.key === "Escape") {
-            $(divAuthentication).remove();
-            $(document).off('keyup');
+            $(selecteur).removeClass('close');
+        } else {
+            
+            $(selecteur).stop(true, true).animate({
+                maxHeight: 0
+            }, 100);
+    
+            $(selecteur).addClass('close');
         }
     });
     
-    $('.divAuthentication').load("http://localhost/anilexs/views/connexion?page="+currentUrl + (cla != null ? '&type=2' : ''));
-}
+});

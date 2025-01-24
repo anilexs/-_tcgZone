@@ -47,3 +47,13 @@ cree un fichier serveur.js
             document.getElementById('log').innerHTML += `<p>Moi : ${message}</p>`;
         });
     </script>
+
+
+    /* Style spécifique pour la langue anglaise */
+html[lang="en"] body {
+    background: red;
+}
+
+html[lang="fr"] body {
+    color: green;
+}

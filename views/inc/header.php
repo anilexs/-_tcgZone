@@ -1,23 +1,19 @@
 <?php
+    // Récupérer la langue préférée du navigateur
+    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 
-    // $currentPath = $_SERVER['REQUEST_URI'];
     
-    // // Vérification des dossiers
-    // if(strpos($currentPath, '/tcg/pokemon/') !== false){
-    //     require_once "../../../model/userModel.php";
-    // }else if (strpos($currentPath, '/catalog/') !== false || strpos($currentPath, '/profil/') !== false || strpos($currentPath, '/admin/') !== false || strpos($currentPath, '/messagerie/') !== false || strpos($currentPath, '/tcg/') !== false) {
-    //     require_once "../../model/userModel.php";
-    // } else {
-    //     require_once "../model/userModel.php";
-    // }
-
-
-    // if(isset($_COOKIE['token'])){
-    //     $likeConte = User::likeCount($_COOKIE['token']);
-    //     $userInfo = User::userInfo($_COOKIE['token']);
-    // }
-
     $host = "http://localhost/!_TCGZone/";
+    $country = [
+        'fr' => [
+            'flag' => $host . 'asset/img/lang/fr.png',
+            'lang' => 'Français'
+        ],
+        'en' => [
+            'flag' => $host . 'asset/img/lang/en.png',
+            'lang' => 'Anglais'
+        ],
+    ];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
