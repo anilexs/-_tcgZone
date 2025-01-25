@@ -50,11 +50,11 @@ li {
 }
 
 
-.optLange .langOpt:first-child {
+.optLange .langOpt:first-child, .optLange .langDefaux:first-child {
     padding-top: 5px;
 }
 
-.langOpt{
+.langOpt, .langDefaux{
     display: flex;
     height: 60px;
     width: 120px;

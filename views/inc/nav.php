@@ -35,11 +35,11 @@ if(isset($_COOKIE[''])){ ?>
                     foreach ($country as $key => $country) { 
                         
                         if($key == $lang){ ?>
-                            <div class="langOpt">
+                            <div class="langDefaux">
                                 <div class="langImg">
-                                    <img src="<?= $country['flag'] ?>" alt="">
+                                    <img class="imgSelect" src="<?= $country['flag'] ?>" alt="">
                                 </div>
-                                <div class="langTxt">Français</div> 
+                                <div class="langTxt langTxtDefaux"><?= $country['lang'] ?></div> 
                             </div>
                         <?php } 
                        
@@ -51,9 +51,9 @@ if(isset($_COOKIE[''])){ ?>
 
                            <div class="langOpt">
                                <div class="langImg">
-                                   <img src="<?= $country['flag'] ?>" alt="">
+                                   <img src="<?= $country['flag'] ?>" alt="<?= $key ?>">
                                </div>
-                               <div class="langTxt">Français</div> 
+                               <div class="langTxt"><?= $country['lang'] ?></div> 
                            </div>
                            <?php } ?>
                     </div>
