@@ -23,39 +23,30 @@ if(isset($_COOKIE[''])){ ?>
                 <input type="text">
             </li>
             <li>
-                <button>connexion</button>
+                <button><?= $trad['login']; ?></button>
             </li>
             <li>
-                <button>inscription</=>
+                <button><?= $trad['SignUp']; ?></button>
             </li>
             <li>
                 <div class='langSelect'>
-                    <?php 
-                    $first = true;
-                    foreach ($country as $key => $country) { 
+                    
+                    <div class="langDefaux">
+                        <div class="langImg">
+                            <img class="imgSelect" src="<?= $country[$lang]['flag'] ?>" alt="">
+                        </div>
+                        <div class="langTxt langTxtDefaux"><?= $country[$lang]['lang'] ?></div> 
+                    </div>
                         
-                        if($key == $lang){ ?>
-                            <div class="langDefaux">
-                                <div class="langImg">
-                                    <img class="imgSelect" src="<?= $country['flag'] ?>" alt="">
-                                </div>
-                                <div class="langTxt langTxtDefaux"><?= $country['lang'] ?></div> 
-                            </div>
-                        <?php } 
-                       
-                        if($first == true){ ?>
-                            <div class="optLange close">
-                            <?php $first = false ?>
-                        <?php } ?>
-
-
+                    <div class="optLange close">
+                        <?php foreach ($country as $key => $value) { ?>
                            <div class="langOpt">
                                <div class="langImg">
-                                   <img src="<?= $country['flag'] ?>" alt="<?= $key ?>">
+                                   <img src="<?= $value['flag'] ?>" alt="<?= $key ?>">
                                </div>
-                               <div class="langTxt"><?= $country['lang'] ?></div> 
+                               <div class="langTxt"><?= $value['lang'] ?></div> 
                            </div>
-                           <?php } ?>
+                        <?php } ?>
                     </div>
                 </div>
             </li>

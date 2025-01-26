@@ -1,9 +1,6 @@
 <?php
-    // Récupérer la langue préférée du navigateur
-    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-
-    
     $host = "http://localhost/!_TCGZone/";
+    
     $country = [
         'fr' => [
             'flag' => $host . 'asset/img/lang/fr.png',
@@ -14,6 +11,26 @@
             'lang' => 'Anglais'
         ],
     ];
+    
+    $lang = isset($_COOKIE['lang']) ? $_COOKIE['lang'] : substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+
+    // if(isset($_COOKIE['lang'])){
+    //     foreach ($country as $key => $value) {
+    //         if($key == $_COOKIE['lang']){
+    //             echo 'oui';
+    //         }else{
+    //             'non';
+    //         }
+    //     }
+    // }
+    $translations_url = "{$host}lang/{$lang}.json";
+    
+    $json_content = file_get_contents($translations_url);
+    if ($json_content === false) {
+        echo "Erreur : Impossible de charger le fichier de traduction.";
+    }
+    $trad = json_decode($json_content, true);
+    
 ?>
 <!DOCTYPE html>
 <html lang="fr">
